@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto:wght@900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #F0F8FF;
+}
+
+
+
+/* *************************************************************************************** */
+
+
+/*------------------ NavBar -------------------------*/
+
+
+nav{
+    background: #252839;
+    font-family: 'Hurricane', cursive;
+}
+
+h2{
+    position: relative;
+    font-size: 11vw;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+}
+
+h2::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #0de69d;
+    -webkit-text-stroke: 0vw #383d52;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate{
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%,90%
+    {
+        width: 100%;
+    }
+}
+
+/*------------------ NavBar -------------------------*/
+
+
+/*------------------ Timer -------------------------*/
+
+
+.timer{
+    display: flex;
+    justify-items: center;
+    text-align: center;
+    flex-direction: column;
+    float: left;
+    height: 600px;
+    width: 10%;
+    font-family: 'Hurricane', cursive;
+}
+
+.timer span{
+    display: block;
+    font-weight: 300;
+    letter-spacing: 6px;
+    font-size: 3em;
+}
+
+.countdown{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.countdown div{
+    position: relative;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    margin: 40px 5px;
+    font-size: 3em;
+    font-weight: 500;
+}
+
+
+.countdown div::before{
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left:0;
+    width: 100%;
+    /* height: 35px; */
+    background: #ff0;
+    color: #333;
+    font-size: 0.35em;
+    line-height: 35px;
+    font-weight: 300;
+}
+
+.countdown .day::before{
+    content: 'Days';
+
+}
+.countdown .hour::before{
+    content: 'Hours';
+
+}
+.countdown .minute::before{
+    content: 'Minutes';
+
+}
+.countdown .second::before{
+    content: 'Seconds';
+
+}
+
+/*------------------ Timer -------------------------*/
+.description{
+    height: 680px;
+    width: 100%;
+    overflow:scroll;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.difficulty{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Hurricane', cursive;
+}
+
+.col-3 .col{
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: 'Hurricane', cursive;
+}
+
+
+.col-4 .col{
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: 'Hurricane', cursive;
+}
+
+textarea{
+    font-family:sans-serif
+}
+
+button{
+    border: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+button:first-child:hover{
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+}
+
+button:last-child:hover{
+    background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+    background-size: 400%;
+}
+
+button:first-child:before,button:last-child:before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+button:first-child:hover:before,button:last-child:hover:before{
+    opacity: 1;
+    z-index: -1;
+}
+
+button:hover{
+    z-index: 1;
+    animation: glow 8s linear infinite;
+}
+
+@keyframes glow {
+    0%{
+      background-position: 0%;
+    }
+    100%{
+      background-position: 400%;
+    }
+}
+
+
+/*------------------ Score -------------------------*/
+
+
+
+.score{
+    position:relative;
+    margin-top: 50px;
+    /* margin-left: 50px; */
+    height: 230px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px; 
+    background: linear-gradient(0deg,#000,#262626);
+    font-family: 'Hurricane', cursive;
+}
+
+.score::before,
+.score::after{
+    content: '';
+    position:absolute;
+    top: -2px;
+    left: -2px;
+    border-radius: 100px; 
+    background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
+    background-size: 1800%;
+    width: calc( 100% + 4px);
+    height: calc( 100% + 4px);
+    z-index: -1 ;
+    animation: animate1 20s linear infinite;   
+}
+
+.score::after{
+    filter: blur(20px);
+}
+
+@keyframes animate1
+{
+    0%
+    {
+        background-position: 0 0;
+    }
+    50%
+    {
+        background-position: 300% 0;
+    }
+    100%
+    {
+        background-position: 0 0;
+    }
+}
+
+.score span{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+/*------------------ Score -------------------------*/
+
+.next{
+    display: flex;
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    margin-top: 70px;
+    margin-left: 900px;
+    font-family: 'Hurricane', cursive;
+}
+
+.submit{
+    display: flex;
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    margin-top: 70px;
+    margin-left: 1650px;
+    font-family: 'Hurricane', cursive;
+}
+
+
+/* ************************************************************************************** */
+

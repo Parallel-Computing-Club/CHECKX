@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CodeSense</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="icon" href="imground1/logoround1.png" type="image/x-icon">
+    <link rel="stylesheet" href="cssround1/styleround1.css">
+</head>
+
+<body>
+
+    <nav class="d-lg-flex justify-content-lg-center navbar">
+        <h2 data-text="CodeSense">CodeSense</h2>
+    </nav>
+
+    <div class="container-fluid mt-4" style="margin-bottom: 80px;">
+
+        <div class="timer">
+                    
+            <span>Timer</span>
+            <div class="countdown">
+                <div class="day"></div>
+                <div class="hour"></div>
+                <div class="minute"></div>
+                <div class="second"></div>
+            </div>
+        </div>
+
+        <div class="row" style="
+        /* justify-items: center; */
+        /* float: left; */
+        height: 100px;
+        /* width: 43%; */
+        margin-top: 20px;
+        font-family: 'Hurricane', cursive;">
+            
+            <div class="col text-center" style="display: block;
+            font-weight: 300;
+            letter-spacing: 6px;
+            font-size: 2.80em;
+            /* margin-left: 130px; */
+            "><strong>Problem Statement</strong></div>
+            
+            <div class="col text-center" style="display: block;
+            font-weight: 300;
+            letter-spacing: 6px;
+            font-size: 2.80em;
+            /* margin-left: 130px; */
+            "><strong class="text-center">Wrong Code</strong></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                
+                <div class="difficulty" id="difficulty">
+
+                </div>
+
+                <div  class="description" id="description">
+                    Description
+                </div>
+            </div>
+            <div class="col">
+                <div id="editor" style="height: 500px;"></div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-3">
+                <div class="row">
+
+                    <div class="col"><strong>Expected Output</strong></div>
+                </div>
+                <div class="row">
+                    <div class="col"><textarea id="expop" class="form-control-lg" cols="25" rows="4"></textarea></div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="row">
+                    <div class="col"><strong>Your Output</strong></div>
+                </div>
+                <div class="row">
+                    <div class="col"><textarea id="yourop" class="form-control-lg" cols="25" rows="4"></textarea></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col"><strong>Input</strong></div>
+                </div>
+                <div class="row">
+                    <div class="col"><textarea id="ip" class="form-control-lg" cols="30" rows="4"></textarea></div>
+                </div>
+            </div>
+            <div class="col-2 d-xl-flex justify-content-xl-center align-items-xl-center" style="
+            margin-top: 100px;
+            "><button
+                id="run_btn" onclick = "runcodes()" class="btn btn-success fs-5" type="button" style="
+                    border-radius: 100px;
+                    width: 350px;
+                    height: 95px;
+                    background-color: black;
+                    border: none;
+                    font-family: 'Hurricane', cursive;
+                    ">Run Code</button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-6 text-center d-xl-flex justify-content-xl-center align-items-xl-center">
+
+                <div class="score">
+                    <span style="
+                    margin-top: 40px;
+                    " >Score&nbsp;</span>
+                    <span id="scr" class="scorep" style="
+                    margin-bottom:30px;
+                    "><%=scoreround1 %> </span>
+                </div>
+            <!-- <%=scoreround1 %> -->
+            <div class="submit">
+                <button class="" type="button" id = "submit" >Submit</button>
+            </div>
+            <div class="next">
+                <button type="button" id="next" class="nextp">Next</button>
+            </div>
+        </div>
+    </div>
+    <div id="worker" style="display: hidden"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var questionno = Number("<%=questionno %>")-1;
+        // var questionno = 0;
+        var dataset;
+        fetch("round1json/dataset.json")
+        .then(response => response.json())
+        .then(data => {
+            $("#difficulty").text(data[questionno].difficulty);
+            $("#description").html(data[questionno].description);
+            $("#editor").text(data[questionno].wrongcode);
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/monokai_light");
+            editor.getSession().setMode("ace/mode/c_cpp");
+            document.getElementById("editor").style.height = "730px";
+            document.getElementById("editor").style.overflow = "scroll";
+            document.getElementById("editor").style.boxShadow = "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset";
+            document.getElementById("editor").style.borderRadius = "20px";
+            document.getElementById("editor").style.textAlign = "left";
+            document.getElementById("editor").style.fontSize = "15px";
+            editor.setReadOnly(true);
+            document.getElementById("editor").style.overflow = "scroll";
+            editor.session.setValue(data[questionno].wrongcode);
+            dataset = data;
+        });
+
+        function runcodes(){
+            var wrong_code = dataset[questionno].wrongcodefile;
+            var right_code = dataset[questionno].rightcodefile;
+
+            $("#worker").text("")
+
+            var url = "http://127.0.0.1:5000/get_output"
+            $("#run_btn").attr("disabled", true);
+            $("#expop").val("Running...");
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: {
+                    input: $("#ip").val(),
+                    id: right_code,
+                    time_limit : "1",
+                },
+                success: function(data){
+                    if(data.status == "ok" || data.status == "code ok"){
+                        $("#expop").val(data.output);
+                    } else {
+                        $("#expop").val(data.status);
+                    }
+
+                    $("#worker").text($("#worker").text()+"1")
+                },
+                error: function(data){
+                    $("#expop").val("API Error");
+                }
+            });
+            $("#yourop").val("Running...");
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: {
+                    input: $("#ip").val(),
+                    id: wrong_code,
+                    time_limit : "1",
+                },
+                success: function(data){
+                    if(data.status == "ok" || data.status == "code ok"){
+                        $("#yourop").val(data.output);
+                    } else {
+                        $("#yourop").val(data.status);
+                    }
+
+                    $("#worker").text($("#worker").text()+"1")
+                    
+                    
+                    $("#run_btn").attr("disabled", false);
+                },
+                error: function(data){
+                    $("#yourop").val("API Error");
+                    $("#run_btn").attr("disabled", false);
+                    
+                }
+            });
+            
+        }
+
+        $('#worker').bind('DOMSubtreeModified', function(){
+            if($("#worker").text() == "11"){
+                var op1 = $("#expop").val();
+                var op2 = $("#yourop").val();
+                if(op1 != op2){
+                    alert("Right Answer! Move on")
+                    
+                    //--------------------------
+                    var url = "update_score";
+                    $.ajax({
+                        url: url,
+                        type: "POST",
+                        data: {
+                            score: 5,
+                            index : questionno
+                        },
+                        success: function(data){
+                            console.log(data);
+                            $("#scr").text(data.score);
+                            console.log("your score has increased.");
+                        },
+                        error: function(data){
+                            console.log("your score has not increased.");
+                        }
+                    });
+                    //-----------------------------
+
+                } else {
+                    console.log("Keep Trying")
+                }
+                $("#worker").text("")
+            }
+        });
+        
+
+    </script>
+    <script src="jsround1/indexround1.js"></script>
+</body>
+
+</html>
