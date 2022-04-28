@@ -19,10 +19,10 @@ const http = require('http');
 //     cookie: { maxAge: oneDay },
 //     resave: false 
 // }));
-
+http://143.110.181.23/
 app.use(session({
     secret: 'ssshhhhh',
-    store: new redisStore({ host: '143.110.181.23', port: 6390, client: client,ttl : 260}),
+    store: new redisStore({ host: 'http://143.110.181.23/', port: 6390, client: client,ttl : 260}),
     saveUninitialized: false,
     resave: false
 }));
