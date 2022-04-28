@@ -7,16 +7,22 @@ const client  = redis.createClient();
 const redisStore = require('connect-redis')(session);
 const app = express();
 const request = require('request');
-// const request = require("request");
 const fs = require("fs");
 const sample = require("./public/round1json/sample.json");
 const http = require('http');
 
+// const oneDay = 1000 * 60 * 60 * 24;
+
+// app.use(session({
+//     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+//     saveUninitialized:true,
+//     cookie: { maxAge: oneDay },
+//     resave: false 
+// }));
 
 app.use(session({
     secret: 'ssshhhhh',
-    // create new redis store.
-    store: new redisStore({ host: 'localhost', port: 6379, client: client,ttl : 260}),
+    store: new redisStore({ host: '143.110.181.23', port: 6390, client: client,ttl : 260}),
     saveUninitialized: false,
     resave: false
 }));
@@ -27,15 +33,6 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
-// var username;
-// var rollno ;
-// var name ;
-// var questionno = -1;
-// var wrongcodeoutput, rightcodeoutput;
-// var ans = "Output Will Show Here";
-// var scoreround1 = 0;
-// var round1done = 0,round2done = 0;
-// var counter = 0;
 mongoose.connect(
     `mongodb+srv://avi:ag_1022000_@cluster0.y0fpc.mongodb.net/pcc-project?retryWrites=true&w=majority`,
     {
@@ -61,19 +58,11 @@ const usersSchema = {
 
 const User = mongoose.model('User',usersSchema);
 
-// const user1 = new User({
-//     username : "avijit ghosh",
-//     rollno : 205321004,
-//     score1 : 0,
-//     score2 : 0
-// })
-
 
 app.get('/',(req,res) => {
 
     User.find({}, (err, foundUsers) => {
         
-        // console.log(foundUsers);
         function sortByProperty(property){  
             return function(a,b){  
                if(a[property] < b[property])  
@@ -85,7 +74,7 @@ app.get('/',(req,res) => {
             }  
          }
 
-        foundUsers.sort(sortByProperty("score2")); //sort according to pId 
+        foundUsers.sort(sortByProperty("score2")); 
         // console.log(foundUsers);
         res.render(`${__dirname}/Client/indexfront.ejs`,{
             users : foundUsers

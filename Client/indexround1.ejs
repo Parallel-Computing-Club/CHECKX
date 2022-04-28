@@ -159,7 +159,8 @@
 
             $("#worker").text("")
 
-            var url = "http://127.0.0.1:5000/get_output"
+            var url = "http://comp.pcc.events/get_output"
+            // var url = "http://127.0.0.1:5000/get_output"
             $("#run_btn").attr("disabled", true);
             $("#expop").val("Running...");
             $.ajax({
