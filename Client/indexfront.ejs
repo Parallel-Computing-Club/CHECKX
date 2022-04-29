@@ -279,7 +279,15 @@
     </div>
   </section>
   <!-- End Footer -->
-
+  <script>
+    // const message = Boolean("<%= alert %>");
+    const message = "<%= alert %>";
+    console.log(message);
+    console.log(typeof(message));
+    if(message == "true"){
+      window.alert("Invalid Roll No. or Password");
+    }
+  </script>
 
   <script src="jsfront/indexfront.js"></script>
 </body>
