@@ -30,10 +30,10 @@ app.use(
   session({
     secret: "ssshhhhh",
     store: new redisStore({
-    //   host: "localhost",
+      // host: "localhost",
       host: "http://143.110.181.23/",
       port: 6390,
-    //   port: 6379,
+      // port: 6379,
       client: client,
       ttl: 260,
     }),
