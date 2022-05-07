@@ -1,6 +1,6 @@
 // let countDownDate = new Date("Mar 29, 2022 23:59:59").getTime();
 
-let countDownDate = new Date("Apr 20, 2022 12:00:00").getTime();
+let countDownDate = new Date("May 14, 2022 18:00:00").getTime();
 // console.log(countDownDate);
 
 // console.log(new Date());

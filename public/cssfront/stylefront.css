@@ -369,12 +369,13 @@ p {
 	font-weight: 500;
 }
 #projects .project-info h2 {
-	font-size: 1.8rem;
+	font-size: 2.5rem;
 	font-weight: 500;
 	margin-top: 10px;
 }
 #projects .project-info p {
 	color: white;
+	font-size: 1.7rem;
 }
 #projects .project-img {
 	flex-basis: 50%;
@@ -447,12 +448,13 @@ p {
 	font-weight: 500;
 }
 #round2 .round2-info h2 {
-	font-size: 1.8rem;
+	font-size: 2.5rem;
 	font-weight: 500;
 	margin-top: 10px;
 }
 #round2 .round2-info p {
 	color: white;
+	font-size: 1.7rem;
 }
 #round2 .round2-img {
 	flex-basis: 50%;
@@ -555,7 +557,7 @@ p {
 	font-size: 4rem;
 	margin-top: 3rem;
   }
-  
+
  	/* @media (max-width: 500px) {
   
 	.members-img {

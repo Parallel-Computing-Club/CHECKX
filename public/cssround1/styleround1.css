@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto:wght@900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 *{
     box-sizing: border-box;
@@ -22,7 +22,8 @@ body{
 
 nav{
     background: #252839;
-    font-family: 'Hurricane', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    font-family: 'Lobster', cursive;
 }
 
 h2{
@@ -70,7 +71,8 @@ h2::before{
     float: left;
     height: 600px;
     width: 10%;
-    font-family: 'Hurricane', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    font-family: 'Lobster', cursive;
 }
 
 .timer span{
@@ -139,6 +141,7 @@ h2::before{
     border-radius: 10px;
     padding: 20px;
     font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Lobster', cursive; */
     font-size: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
@@ -150,7 +153,8 @@ h2::before{
     font-size: 25px;
     border-radius: 10px;
     text-align: center;
-    font-family: 'Hurricane', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    font-family: 'Lobster', cursive;
 }
 
 .col-3 .col{
@@ -159,7 +163,8 @@ h2::before{
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    font-family: 'Hurricane', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    font-family: 'Lobster', cursive;
 }
 
 
@@ -169,7 +174,8 @@ h2::before{
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    font-family: 'Hurricane', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    font-family: 'Lobster', cursive;
 }
 
 textarea{
@@ -254,7 +260,8 @@ button:hover{
     justify-content: center;
     border-radius: 100px; 
     background: linear-gradient(0deg,#000,#262626);
-    font-family: 'Hurricane', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    font-family: 'Lobster', cursive;
 }
 
 .score::before,
@@ -309,7 +316,8 @@ button:hover{
     width: 300px;
     margin-top: 70px;
     margin-left: 900px;
-    font-family: 'Hurricane', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    font-family: 'Lobster', cursive;
 }
 
 .submit{
@@ -319,7 +327,8 @@ button:hover{
     width: 300px;
     margin-top: 70px;
     margin-left: 1650px;
-    font-family: 'Hurricane', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    font-family: 'Lobster', cursive;
 }
 
 

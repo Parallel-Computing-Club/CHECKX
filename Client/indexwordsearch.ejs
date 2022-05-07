@@ -67,8 +67,8 @@
 
         const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
-        // var myWords = ["EGG","MILK","BUTTER","JAM","OATS","SUGAR","BREAD","RUSK"];
-        var initialWords = ['RUdH', 'TUlMSw==', 'QlVUVEVS', 'SkFN', 'T0FUUw==', 'U1VHQVI=', 'QlJFQUQ=', 'UlVTSw=='];
+        // var myWords = ["ARRAY","BEACH","BUTTER","JAM","OATS","SUGAR","ANGER","RUSK","PURE","MORAL","WORTHY","ALMIGHT","STUDY","GRID","WORD"];
+        var initialWords = ['QVJSQVk=', 'QkVBQ0g=', 'QlVUVEVS', 'SkFN', 'T0FUUw==', 'U1VHQVI=', 'QU5HRVI=', 'UlVTSw==', 'UFVSRQ==', 'TU9SQUw=', 'V09SVEhZ', 'QUxNSUdIVA==', 'U1RVRFk=', 'R1JJRA==', 'V09SRA=='];
 
         const myWords = initialWords.map(x => window.atob(x));
     
@@ -86,7 +86,7 @@
 
         $(document).ready(function(){
             arrangeGame();
-
+            console.log("yoo");
             $(".individual").click(function(){
                 
                 if((tempRow == -1 && tempCol == -1) || pos){
@@ -127,10 +127,11 @@
                         console.log(prescore);
                     }
                 }
-                // console.log("yoo");
+                console.log("yoo*2");
             });
 
             $(document).keydown(function(){
+                console.log("yooyoo");
                 $(".individual").removeClass("colorPurple");
             }).keyup(function(){
                 var local = selectedWord;

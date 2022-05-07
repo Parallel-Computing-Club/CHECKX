@@ -30,7 +30,6 @@ $(document).ready(function () {
 
 
 
-
 // The End Of The Year Date To Countdown To
 // 1000 milliseconds = 1 Second
 
