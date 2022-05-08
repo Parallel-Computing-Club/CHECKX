@@ -1,7 +1,8 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto:wght@900&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
 /* font-family: 'Poppins', sans-serif; */
 /* font-family: 'Hurricane', cursive; */
 /* font-family: 'Roboto', sans-serif; */
@@ -171,6 +172,7 @@ h2::before{
     background-image: linear-gradient(120deg, hsl(192, 70%, 51%), hsl(136, 65%, 51%));
 }
 
+
 .correctlySelected{
     background: silver;
 }
@@ -194,17 +196,22 @@ h2::before{
     flex-direction: column;
     float: right;
     height: 300px;
-    width: 600px;
+    /* width: 600px; */
+    width: 35%;
     margin-top: 90px;
-    font-family: 'Hurricane', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    /* font-family: 'Open Sans', sans-serif; */
 }
 
 .timer span{
     display: block;
     font-weight: 300;
     letter-spacing: 6px;
-    font-size: 3em;
+    /* font-size: 3em; */
+    font-size: 2em;
     height: 60px;
+    font-weight: 700;
 }
 
 .countdown{
@@ -222,8 +229,10 @@ h2::before{
     background: #333;
     color: #fff;
     margin: 0 25px;
-    font-size: 3em;
-    font-weight: 500;
+    /* font-size: 3em; */
+    font-size: 2em;
+    /* font-weight: 500; */
+    font-weight: 700;
 }
 
 
@@ -238,7 +247,8 @@ h2::before{
     color: #333;
     font-size: 0.35em;
     line-height: 35px;
-    font-weight: 300;
+    /* font-weight: 300; */
+    font-weight: 700;
 }
 
 .countdown .day::before{
@@ -268,9 +278,11 @@ h2::before{
     float: right;
     position:relative;
     margin-right: 40px;
-    
-    height: 230px;
-    width: 250px;
+    font-weight: 700;
+    /* height: 230px; */
+    height: 160px;
+    width: 12%;
+    /* width: 250px; */
     clear: both;
     display: flex;
     flex-direction: column;
@@ -278,7 +290,9 @@ h2::before{
     justify-content: center;
     border-radius: 100px; 
     background: linear-gradient(0deg,#000,#262626);
-    font-family: 'Hurricane', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    /* font-family: 'Open Sans', sans-serif; */
 }
 
 .prescore::before,
@@ -322,11 +336,13 @@ h2::before{
     text-align: center;
     margin-top: 60px;
     color: white;
-    font-size: 40px;
+    /* font-size: 40px; */
+    font-size: 20px;
 }
 
 .prescore p{
-    font-size: 50px;
+    /* font-size: 50px; */
+    font-size: 30px;
     margin-bottom: 70px;
     color: white;
 }
@@ -336,11 +352,14 @@ h2::before{
 /*------------------ Live Score -------------------------*/
 
 .score{
+    font-weight: 700;
     float: right;
     position:relative;
     margin-right: 50px;
-    height: 230px;
-    width: 250px;
+    /* height: 230px;
+    width: 250px; */
+    height: 170px;
+    width: 13%;
     /* clear: both; */
     display: flex;
     flex-direction: column;
@@ -348,7 +367,9 @@ h2::before{
     justify-content: center;
     border-radius: 100px; 
     background: linear-gradient(0deg,#000,#262626);
-    font-family: 'Hurricane', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    /* font-family: 'Hurricane', cursive; */
+    /* font-family: 'Open Sans', sans-serif; */
 }
 .score::before,
 .score::after{
@@ -391,11 +412,13 @@ h2::before{
     text-align: center;
     margin-top: 60px;
     color: white;
-    font-size: 50px;
+    /* font-size: 50px; */
+    font-size: 30px;
 }
 
 .score p{
-    font-size: 50px;
+    /* font-size: 50px; */
+    font-size: 40px;
     margin-bottom: 70px;
     color: white;
 }
@@ -411,11 +434,13 @@ h2::before{
     float: right;
     /* position: relative; */
     height: 100px;
-    width: 400px;
+    width: 380px;
     clear: both;
     margin-top: 80px;
-    margin-right: 110px;
-    font-family: 'Hurricane', cursive;
+    margin-right: 46px;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    /* font-family: 'Open Sans', sans-serif; */
+    /* font-family: 'Hurricane', cursive; */
     /* font-family: 'Roboto', sans-serif; */
     /* font-size: 0px; */
 }

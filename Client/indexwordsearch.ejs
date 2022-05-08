@@ -82,7 +82,7 @@
         var pos = true;
         var cur = -1;
         var prev = -1;
-
+        var cnt = 0;
 
         $(document).ready(function(){
             arrangeGame();
@@ -132,8 +132,12 @@
 
             $(document).keydown(function(){
                 console.log("yooyoo");
-                $(".individual").removeClass("colorPurple");
+                if(cnt == 1){
+                    $(".individual").removeClass("colorPurple");
+                }
+                cnt = 0;
             }).keyup(function(){
+                cnt = 1;
                 var local = selectedWord;
 
                 if(selectedWord.length > 2){
