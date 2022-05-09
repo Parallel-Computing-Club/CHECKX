@@ -244,13 +244,12 @@ app.get("/round1", async (req, res) => {
     // const name = await User.findOne({rollno:rollno});
 
     const name = await User.findOne({ rollno: rollno });
+    console.log(new Date());
 
     if (new Date("May 9, 2022 20:00:00") >= new Date() ) {
       res.render(`${__dirname}/Client/livepage1.ejs`);
-    }else if(new Date("May 9, 2022 21:30:00") <= new Date()){
-      res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
-    } 
-    else if (name.round1done == 1) {
+    }
+    else if (new Date("May 9, 2022 21:30:00") <= new Date() || name.round1done == 1) {
       res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
     } else {
       // round1done = 1;
@@ -424,10 +423,8 @@ app.get("/round2", async (req, res) => {
 
   if (new Date("May 9, 2022 21:45:00") >= new Date()) {
     res.render(`${__dirname}/Client/livepage2.ejs`);
-  }else if(new Date("May 9, 2022 21:55:00") <= new Date()){
-    res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
-  } 
-   else if (name.round1done == 0 || name.round2done == 1) {
+  }
+   else if (new Date("May 9, 2022 21:55:00") <= new Date() || name.round1done == 0 || name.round2done == 1) {
     res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
   } else {
     name.round2done = 1;
