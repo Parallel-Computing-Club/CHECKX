@@ -31,7 +31,24 @@ app.use(session({
   }
 }));
 
+function calcTime(city, offset) {
+  // create Date object for current location
+  var d = new Date();
 
+  // convert to msec
+  // subtract local time zone offset
+  // get UTC time in msec
+  var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+  // create new Date object for different city
+  // using supplied offset
+  var nd = new Date(utc + (3600000*offset));
+
+  // return time as a string
+  return nd;
+}
+
+// alert(calcTime('Bombay', '+5.5'));
 
 // app.use(session({
 //     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
@@ -246,10 +263,10 @@ app.get("/round1", async (req, res) => {
     const name = await User.findOne({ rollno: rollno });
     console.log(new Date());
 
-    if (new Date("May 9, 2022 20:00:00") >= new Date() ) {
+    if (new Date("May 9, 2022 22:00:00") >= calcTime('Bombay', '+5.5') ) {
       res.render(`${__dirname}/Client/livepage1.ejs`);
     }
-    else if (new Date("May 9, 2022 21:30:00") <= new Date() || name.round1done == 1) {
+    else if (new Date("May 9, 2022 23:30:00") <= calcTime('Bombay', '+5.5') || name.round1done == 1) {
       res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
     } else {
       // round1done = 1;
@@ -420,11 +437,12 @@ app.get("/round2", async (req, res) => {
   console.log(rollno);
 
   const name = await User.findOne({ rollno: rollno });
+  console.log(new Date());
 
-  if (new Date("May 9, 2022 21:45:00") >= new Date()) {
+  if (new Date("May 9, 2022 23:45:00") >= calcTime('Bombay', '+5.5')) {
     res.render(`${__dirname}/Client/livepage2.ejs`);
   }
-   else if (new Date("May 9, 2022 21:55:00") <= new Date() || name.round1done == 0 || name.round2done == 1) {
+  else if (new Date("May 9, 2022 23:55:00") <= calcTime('Bombay', '+5.5') || name.round1done == 0 || name.round2done == 1) {
     res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
   } else {
     name.round2done = 1;
