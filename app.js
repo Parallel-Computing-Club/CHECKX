@@ -262,7 +262,7 @@ app.get("/round1", async (req, res) => {
 
     const name = await User.findOne({ rollno: rollno });
     console.log(new Date());
-
+    console.log(calcTime('Bombay', '+5.5'));
     if (new Date("May 9, 2022 22:00:00") >= calcTime('Bombay', '+5.5') ) {
       res.render(`${__dirname}/Client/livepage1.ejs`);
     }
@@ -438,6 +438,7 @@ app.get("/round2", async (req, res) => {
 
   const name = await User.findOne({ rollno: rollno });
   console.log(new Date());
+  console.log(calcTime('Bombay', '+5.5'));
 
   if (new Date("May 9, 2022 23:45:00") >= calcTime('Bombay', '+5.5')) {
     res.render(`${__dirname}/Client/livepage2.ejs`);
