@@ -67,7 +67,6 @@
 
         const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
-        // var myWords = ["ARRAY","BEACH","BUTTER","JAM","OATS","SUGAR","ANGER","RUSK","PURE","MORAL","WORTHY","ALMIGHT","STUDY","GRID","WORD"];
         var initialWords = ['QVJSQVk=', 'QkVBQ0g=', 'QlVUVEVS', 'SkFN', 'T0FUUw==', 'U1VHQVI=', 'QU5HRVI=', 'UlVTSw==', 'UFVSRQ==', 'TU9SQUw=', 'V09SVEhZ', 'QUxNSUdIVA==', 'U1RVRFk=', 'R1JJRA==', 'V09SRA=='];
 
         const myWords = initialWords.map(x => window.atob(x));
@@ -86,7 +85,7 @@
 
         $(document).ready(function(){
             arrangeGame();
-            console.log("yoo");
+            // console.log("yoo");
             $(".individual").click(function(){
                 
                 if((tempRow == -1 && tempCol == -1) || pos){
@@ -107,8 +106,8 @@
                     $(this).addClass("colorPurple");
                     selectedWord += $(this).html();
                     prescore = prescore - 1;
-                    console.log(selectedWord);
-                    console.log(prescore);
+                    // console.log(selectedWord);
+                    // console.log(prescore);
                 }
                 else{
                     prev = cur;
@@ -123,15 +122,15 @@
                         $(this).addClass("colorPurple");
                         selectedWord += $(this).html();
                         prescore = prescore - 1;
-                        console.log(selectedWord);
-                        console.log(prescore);
+                        // console.log(selectedWord);
+                        // console.log(prescore);
                     }
                 }
                 console.log("yoo*2");
             });
 
             $(document).keydown(function(){
-                console.log("yooyoo");
+                // console.log("yooyoo");
                 if(cnt == 1){
                     $(".individual").removeClass("colorPurple");
                 }
@@ -156,13 +155,13 @@
                                 $(".colorPurple").addClass("correctlySelected");
                                 $(this).addClass("done");
                                 doneWord.push(local);
-                                console.log(doneWord);
+                                // console.log(doneWord);
                                 score += 1 ; 
                                 tempscore = prescore;
-                                console.log(tempscore);
+                                // console.log(tempscore);
                                 document.getElementById("score").innerHTML = score;
                                 document.getElementById("prescore").innerHTML = prescore;
-                                console.log(prescore);
+                                // console.log(prescore);
                             }
                             else{
 

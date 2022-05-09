@@ -1,10 +1,6 @@
-// let countDownDate = new Date("Mar 29, 2022 23:59:59").getTime();
 
-let countDownDate = new Date("May 9, 2022 20:00:00").getTime();
-// console.log(countDownDate);
+let countDownDate = new Date("May 10, 2022 15:00:00").getTime();
 
-// console.log(new Date());
-// console.log(new Date("Apr 20, 2022 12:00:00"));
 
 let counter = setInterval(() => {
     // Get Date Now
@@ -14,7 +10,6 @@ let counter = setInterval(() => {
     let dateDiff = countDownDate - dateNow;
 
     // Get Time Units
-    // let days = Math.floor(dateDiff / 1000 / 60 / 60 / 24);
     let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
     let hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
@@ -27,11 +22,6 @@ let counter = setInterval(() => {
     
 
     if (dateDiff < 0) {
-        // window.location.href = "http://127.0.0.1:5500/round1";
-        // document.getElementById("submit").click();
-        // console.log("ENDED");
-        window.location.reload();
-        // clearInterval(counter);
-
+        window.location.href = '/logout';
     }
 }, 1000);

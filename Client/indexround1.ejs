@@ -133,7 +133,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js" type="text/javascript" charset="utf-8"></script>
     <script>
         var questionno = Number("<%=questionno %>")-1;
-        // var questionno = 0;
+        
         var dataset;
         fetch("round1json/dataset.json")
         .then(response => response.json())
@@ -162,8 +162,6 @@
 
             $("#worker").text("")
             
-            // var url = "http://comp.pcc.events/get_output"
-            // var url = "http://139.59.7.136/get_output"
             var url = "https://pccutil.tk/get_output"
             $("#run_btn").attr("disabled", true);
             $("#expop").val("Running...");

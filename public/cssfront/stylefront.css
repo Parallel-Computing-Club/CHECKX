@@ -1,5 +1,4 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Muli:wght@400;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Overpass:ital,wght@1,900&family=Roboto:ital,wght@0,400;1,900&family=The+Nautigal:wght@400;700&display=swap');
 
@@ -276,57 +275,6 @@ p {
 
 
 
-/* About Section */
-/* #about .about {
-	flex-direction: column-reverse;
-	text-align: center;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 100px 20px;
-}
-#about .col-left {
-	width: 250px;
-	height: 360px;
-}
-#about .col-right {
-	width: 100%;
-}
-#about .col-right h2 {
-	font-size: 1.8rem;
-	font-weight: 500;
-	letter-spacing: 0.2rem;
-	margin-bottom: 10px;
-}
-#about .col-right p {
-	margin-bottom: 20px;
-}
-#about .col-right .cta {
-	color: black;
-	margin-bottom: 50px;
-	padding: 10px 20px;
-	font-size: 2rem;
-}
-#about .col-left .about-img {
-	height: 100%;
-	width: 100%;
-	position: relative;
-	border: 10px solid white;
-}
-#about .col-left .about-img::after {
-	content: '';
-	position: absolute;
-	left: -33px;
-	top: 19px;
-	height: 98%;
-	width: 98%;
-	border: 7px solid crimson;
-	z-index: -1;
-} */
-/* End About Section */
-
-
-
-
 /* Round 1 section */
 #projects .projects {
 	flex-direction: column;
@@ -484,21 +432,12 @@ p {
 
 /* Start Leaderboard section */
 
-/* h1 {
-	font-size: 4rem;
-  }
-   */
+
    .leaderboard{
 	display: flex;
 	flex-direction: column;
    }
-   /* table{
-		font-family: "Muli", sans-serif;
-   } */
-
-   /* tbody{
-	   width: 80%;
-   } */
+   
   .table-main {
 	/* height: 70%; */
 	width: 85%;
@@ -558,116 +497,7 @@ p {
 	margin-top: 3rem;
   }
 
- 	/* @media (max-width: 500px) {
-  
-	.members-img {
-	  display: none;
-	}
-	 .email {
-	  display: none;
-	}
-  
-	.table-main {
-	  margin-left: 0;
-	  display: -webkit-box;
-	  display: -ms-flexbox;
-	  display: flex;
-	  -webkit-box-align: center;
-	  -ms-flex-align: center;
-	  align-items: center;
-	  -webkit-box-pack: center;
-	  -ms-flex-pack: center;
-	  justify-content: center;
-	}
-  
-	.table-main .date {
-	  display: none;
-	}
-  
-	.table-main th {
-	  font-size: .8rem;
-	}
-  
-	.table-main td {
-	  font-size: .6rem;
-	}
-  
-	.table-heading {
-	  width: 100vw;
-	  display: -webkit-box;
-	  display: -ms-flexbox;
-	  display: flex;
-	  -webkit-box-pack: center;
-	  -ms-flex-pack: center;
-	  justify-content: center;
-	  -webkit-box-align: center;
-	  -ms-flex-align: center;
-	  align-items: center;
-	  margin-left: 0;
-	}
-  
-	h1 {
-	  font-size: 2rem;
-	}
-  
-  } 
-  
-  @media (min-width: 500px) and (max-width: 770px) {
-	
-	.members-img {
-	  display: none;
-	}
-  
-	.email {
-	  display: none;
-	}
-  
-	.table-main {
-	  margin-left: 0;
-	  display: -webkit-box;
-	  display: -ms-flexbox;
-	  display: flex;
-	  -webkit-box-align: center;
-	  -ms-flex-align: center;
-	  align-items: center;
-	  -webkit-box-pack: center;
-	  -ms-flex-pack: center;
-	  justify-content: center;
-	}
-  
-	.table-main .date {
-	  display: none;
-	}
-  
-	.table-main th {
-	  font-size: 1rem;
-	}
-  
-	.table-main td {
-	  font-size: .8rem;
-	}
-  
-	.table-heading {
-	  width: 100vw;
-	  display: -webkit-box;
-	  display: -ms-flexbox;
-	  display: flex;
-	  -webkit-box-pack: center;
-	  -ms-flex-pack: center;
-	  justify-content: center;
-	  -webkit-box-align: center;
-	  -ms-flex-align: center;
-	  align-items: center;
-	  margin-left: 0;
-	}
-  
-	h1 {
-	  font-size: 2.5rem;
-	}
-  
-  }*/
-  
-
+ 	
 /* End Leaderboard section */
 
 
@@ -761,30 +591,6 @@ p {
 	}
 	/* End Hero */
 
-	/* About */
-	/* #about .about {
-		flex-direction: row;
-	}
-	#about .col-left {
-		width: 600px;
-		height: 400px;
-		padding-left: 60px;
-	}
-	#about .about .col-left .about-img::after {
-		left: -45px;
-		top: 34px;
-		height: 98%;
-		width: 98%;
-		border: 10px solid crimson;
-	}
-	#about .col-right {
-		text-align: left;
-		padding: 30px;
-	}
-	#about .col-right h1 {
-		text-align: left;
-	} */
-	/* End About */
 
 
 	/* Round 1 */

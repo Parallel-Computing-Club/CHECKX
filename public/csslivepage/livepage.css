@@ -1,7 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Noto+Sans|Open+Sans:400,700&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto:wght@900&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-/* @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap'; */
+
+
 *{
   margin: 0;
   padding: 0;
@@ -43,25 +42,6 @@ body{
     letter-spacing: 6px;
     margin-bottom: 60px;
 }
-/* .timer{
-    display: flex;
-    justify-items: center;
-    text-align: center;
-    flex-direction: column;
-    float: right;
-    height: 300px;
-    width: 600px;
-    margin-top: 90px;
-    font-family: 'Hurricane', cursive;
-}
-
-.timer span{
-    display: block;
-    font-weight: 300;
-    letter-spacing: 6px;
-    font-size: 3em;
-    height: 60px;
-} */
 
 .countdown{
     display: flex;

@@ -1,12 +1,7 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
-/* font-family: 'Poppins', sans-serif; */
-/* font-family: 'Hurricane', cursive; */
-/* font-family: 'Roboto', sans-serif; */
-/* font-family: 'Open Sans', sans-serif; */
 
 
 *{
@@ -78,13 +73,6 @@ h2::before{
     height: 100%;
     margin: 0px auto;
     font-family: 'Open Sans', sans-serif;
-    /* font-family: 'Poppins', sans-serif; */
-    /* font-family: 'Roboto', sans-serif; */
-    /* background: red!important; */
-    /* z-index: 10; */
-    /* background-color: #082635; */
-    /* background: red; */
-    /* font-family: 'Hurricane', cursive; */
 }
 
 
@@ -128,44 +116,7 @@ h2::before{
     background-image: linear-gradient(120deg, hsl(192, 70%, 51%), hsl(136, 65%, 51%));
 }
 
-/* .individual::before,
-.individual::after{
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background: red;
-    background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
-    background-size: 400%;
-    width: calc(100% + 4px);
-    height:calc(100% + 4px);
-    z-index: -1;
-    animation: animate 20s linear infinite;
-}
 
-.individual:after{
-    filter: blur(20px);
-}
-
-@keyframes animate {
-    0%
-    {
-        background-position: 0 0;
-    }
-    50%
-    {
-        background-position: 300% 0;
-    }
-    100%
-    {
-        background-position: 0 0;
-    }
-
-} */
-
-/* .done{
-    text-decoration: line-through;
-} */
 
 .colorPurple{
     /* background-color: aqua; */
@@ -177,9 +128,7 @@ h2::before{
     background: silver;
 }
 
-/* #message{
-    color:red;
-} */
+
 
 /*------------------ Grid -------------------------*/
 
@@ -432,25 +381,18 @@ h2::before{
 
 .submit{
     float: right;
-    /* position: relative; */
     height: 100px;
     width: 380px;
     clear: both;
     margin-top: 80px;
     margin-right: 46px;
     font-family: 'Oleo Script Swash Caps', cursive;
-    /* font-family: 'Open Sans', sans-serif; */
-    /* font-family: 'Hurricane', cursive; */
-    /* font-family: 'Roboto', sans-serif; */
-    /* font-size: 0px; */
 }
 
 button{
     position: relative;
     height: 100%;
     width: 100%;
-    /* margin: 0 30px; */
-    /* margin-right: 40px; */
     border-radius: 50px;
     border: none;
     outline: none;
@@ -508,31 +450,3 @@ button:hover{
 }
 
 /*------------------ Submit -------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-/* .timer{
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
-    margin: 0;
-} */
-
-
-
-
-
-/* .timer{
-    float: right;
-    height: 200px;
-    width: 200px;
-    clear: both;
-    
-} */
-

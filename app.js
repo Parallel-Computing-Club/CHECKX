@@ -261,16 +261,16 @@ app.get("/round1", async (req, res) => {
     // const name = await User.findOne({rollno:rollno});
 
     const name = await User.findOne({ rollno: rollno });
-    console.log(new Date());
+    // console.log(new Date());
     var today = new Date();
     today.setHours(today.getHours() + 5);
     today.setMinutes(today.getMinutes() + 30);
     console.log(today);
 
-    if (new Date("May 9, 2022 22:00:00") >= today ) {
+    if (new Date("May 10, 2022 15:00:00") >= today ) {
       res.render(`${__dirname}/Client/livepage1.ejs`);
     }
-    else if (new Date("May 9, 2022 23:30:00") <= today || name.round1done == 1) {
+    else if (new Date("May 10 , 2022 16:30:00") <= today || name.round1done == 1) {
       res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
     } else {
       // round1done = 1;
@@ -442,15 +442,17 @@ app.get("/round2", async (req, res) => {
   console.log(rollno);
 
   const name = await User.findOne({ rollno: rollno });
+  
   console.log(new Date());
   var today = new Date();
   today.setHours(today.getHours() + 5);
   today.setMinutes(today.getMinutes() + 30);
   console.log(today);
-  if (new Date("May 9, 2022 23:45:00") >= today) {
+
+  if (new Date("May 10, 2022 16:45:00") >= today) {
     res.render(`${__dirname}/Client/livepage2.ejs`);
   }
-  else if (new Date("May 9, 2022 23:55:00") <= today || name.round1done == 0 || name.round2done == 1) {
+  else if (new Date("May 10, 2022 16:55:00") <= today || name.round1done == 0 || name.round2done == 1) {
     res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
   } else {
     name.round2done = 1;
