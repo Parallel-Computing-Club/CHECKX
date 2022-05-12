@@ -267,10 +267,10 @@ app.get("/round1", async (req, res) => {
     today.setMinutes(today.getMinutes() + 30);
     console.log(today);
 
-    if (new Date("May 10, 2022 15:00:00") >= today ) {
+    if (new Date("May 14, 2022 18:00:00") >= today ) {
       res.render(`${__dirname}/Client/livepage1.ejs`);
     }
-    else if (new Date("May 10 , 2022 16:30:00") <= today || name.round1done == 1) {
+    else if (new Date("May 14 , 2022 19:30:00") <= today || name.round1done == 1) {
       res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
     } else {
       // round1done = 1;
@@ -419,7 +419,7 @@ app.post("/round1/submit", async (req, res) => {
     console.log(name);
 
     name.score1 = Number(req.body.score1);
-    name.totalscore += (0.75 * name.score1);
+    name.totalscore += (0.70 * name.score1);
     name.round1done = 1;
     name.save();
     // console.log(name.score2);
@@ -437,35 +437,35 @@ app.get("/round2", async (req, res) => {
 
   // const username = req.session.username;
   if (req.session.rollno && req.cookies.user_sid) {
-  console.log(new Date("May 9, 2022 23:45:00"));
-  const rollno = req.session.rollno;
-  console.log(rollno);
+    console.log(new Date("May 9, 2022 23:45:00"));
+    const rollno = req.session.rollno;
+    console.log(rollno);
 
-  const name = await User.findOne({ rollno: rollno });
-  
-  console.log(new Date());
-  var today = new Date();
-  today.setHours(today.getHours() + 5);
-  today.setMinutes(today.getMinutes() + 30);
-  console.log(today);
+    const name = await User.findOne({ rollno: rollno });
+    
+    console.log(new Date());
+    var today = new Date();
+    today.setHours(today.getHours() + 5);
+    today.setMinutes(today.getMinutes() + 30);
+    console.log(today);
 
-  if (new Date("May 10, 2022 16:45:00") >= today) {
-    res.render(`${__dirname}/Client/livepage2.ejs`);
+    if (new Date("May 14, 2022 19:50:00") >= today) {
+      res.render(`${__dirname}/Client/livepage2.ejs`);
+    }
+    else if (new Date("May 14, 2022 20:00:00") <= today || name.round1done == 0 || name.round2done == 1) {
+      res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
+    } else {
+      name.round2done = 1;
+      // name = await User.findOne({rollno:rollno});
+      name.save();
+      console.log(name);
+
+      res.render(__dirname + "/Client/indexwordsearch.ejs", {
+        score1: name.score1,
+      });
+      // res.render(`${__dirname}/Client/indexwordsearch.ejs`);
+    }
   }
-  else if (new Date("May 10, 2022 16:55:00") <= today || name.round1done == 0 || name.round2done == 1) {
-    res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
-  } else {
-    name.round2done = 1;
-    // name = await User.findOne({rollno:rollno});
-    name.save();
-    console.log(name);
-
-    res.render(__dirname + "/Client/indexwordsearch.ejs", {
-      score1: name.score1,
-    });
-    // res.render(`${__dirname}/Client/indexwordsearch.ejs`);
-  }
-}
 });
 
 app.post("/round2", async (req, res) => {

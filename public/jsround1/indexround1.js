@@ -33,7 +33,7 @@ $(document).ready(function () {
 // The End Of The Year Date To Countdown To
 // 1000 milliseconds = 1 Second
 
-let countDownDate = new Date("May 10, 2022 16:30:00").getTime();
+let countDownDate = new Date("May 14, 2022 19:30:00").getTime();
 
 let counter = setInterval(() => {
     // Get Date Now
@@ -54,7 +54,7 @@ let counter = setInterval(() => {
     document.querySelector(".second").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
     
 
-    if (dateDiff < 0) {
+    if (dateDiff <= 0) {
         document.getElementById("submit").click();
     }
 }, 1000);

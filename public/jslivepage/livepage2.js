@@ -1,4 +1,4 @@
-let countDownDate = new Date("May 10, 2022 16:45:00").getTime();
+let countDownDate = new Date("May 14, 2022 19:50:00").getTime();
 
 
 let counter = setInterval(() => {
@@ -20,7 +20,7 @@ let counter = setInterval(() => {
     document.getElementById("second").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
     
 
-    if (dateDiff < 0) {
+    if (dateDiff <= 0) {
         window.location.href = '/logout';
     }
 }, 1000);
