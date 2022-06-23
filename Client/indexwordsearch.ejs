@@ -32,20 +32,14 @@
         </div>
         
         <div class="prescore">
-            <!-- <h2>Score</h2> -->
             <h1>Letters<br>Remaining</h1>
             <p id= "prescore"></p>
         </div>
 
         <div class="score">
-            <!-- <h2>Score</h2> -->
             <h1>Score</h1>
 
-            <!-- <form action="/round2" method="post"> -->
-                <p id= "score" class="scorep" name="score">0</p>
-                <!-- <input type="text" id= "score" name="score" placeholder="10"> -->
-            <!-- </form> -->
-
+            <p id= "score" class="scorep" name="score">0</p>
         </div>
 
         <div class="submit">
@@ -59,11 +53,8 @@
         score1 = Number(score1);
         var prescore = score1;
         var tempscore = score1;
-        // var tempscore;
         console.log(score1);
-        // console.log("yoo");
         document.getElementById("prescore").innerHTML = prescore;
-        // console.log(score+1);
 
         const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
@@ -71,7 +62,6 @@
 
         const myWords = initialWords.map(x => window.atob(x));
     
-        // console.log(myWords);
         var tempWords = [];
         var selectedWord = "";
         var score = 0;
@@ -85,11 +75,9 @@
 
         $(document).ready(function(){
             arrangeGame();
-            // console.log("yoo");
             $(".individual").click(function(){
                 
                 if((tempRow == -1 && tempCol == -1) || pos){
-                    // if(tempRow)
                     if(tempRow != -1 ){
                         tempRow = $(this).data("row");
                         tempCol = $(this).data("column");
@@ -106,8 +94,6 @@
                     $(this).addClass("colorPurple");
                     selectedWord += $(this).html();
                     prescore = prescore - 1;
-                    // console.log(selectedWord);
-                    // console.log(prescore);
                 }
                 else{
                     prev = cur;
@@ -122,15 +108,12 @@
                         $(this).addClass("colorPurple");
                         selectedWord += $(this).html();
                         prescore = prescore - 1;
-                        // console.log(selectedWord);
-                        // console.log(prescore);
                     }
                 }
                 console.log("yoo*2");
             });
 
             $(document).keydown(function(){
-                // console.log("yooyoo");
                 if(cnt == 1){
                     $(".individual").removeClass("colorPurple");
                 }
@@ -155,13 +138,10 @@
                                 $(".colorPurple").addClass("correctlySelected");
                                 $(this).addClass("done");
                                 doneWord.push(local);
-                                // console.log(doneWord);
                                 score += 1 ; 
                                 tempscore = prescore;
-                                // console.log(tempscore);
                                 document.getElementById("score").innerHTML = score;
                                 document.getElementById("prescore").innerHTML = prescore;
-                                // console.log(prescore);
                             }
                             else{
 
@@ -174,15 +154,6 @@
                 tempRow = -1;
                 tempCol = -1;
                 pos = true;
-
-                            // found all the words correctly
-                //         // if($(".done").length == myWords.length){
-                //         //     $("#hint").empty();
-                //         //     $("#hint").append("<p id = message > you killed it 🔥 🔥 🔥</p>")
-                //         // }
-                //     });
-                // }
-                // prescore = tempscore;
                 selectedWord = "";
             });    
         });
@@ -204,7 +175,6 @@
             }
 
             placeCorrectLetters(myWords);
-            // console.log("end of first array \n");
             placeCorrectLetters(tempWords);
 
             $.each($(".individual"),function(key,item){
@@ -263,17 +233,11 @@
             for(var i = 0; i < myArr.length;i++)
             {
                 var orientation = positions[Math.floor(Math.random()*positions.length)];
-                // alert(orientation);
                 
                 var start = Math.floor(Math.random()*$(".individual").length);
                 
                 var myRow = $(".individual:eq(" + start +")").data("row");
                 var myColumn = $(".individual:eq(" + start +")").data("column");
-
-
-
-                // $(".individual:eq(" + start +")").html("A");
-                // console.log(myArr[i] + " : " + orientation + ": " + start + " : " + myRow + " : " + myColumn);
 
                 //Row Orientation
                 if(orientation == "row")
@@ -283,13 +247,11 @@
                     if((myColumn*1) + myArr[i].length <= 13)
                     {
                         newStart = start;
-                        // console.log("space in row : "+ myArr[i] + " : " + start + " : " + myColumn); 
                     }
                     else
                     {
                         var newColumn = 13 - myArr[i].length;
                         newStart = $(".individual[data-row=" + myRow + "][data-column=" + newColumn + "]").index();
-                        // console.log(" no space in row : "+ myArr[i] + " : " + start + " : " + myColumn + " : " + newStart);
                     }
                 }
 
@@ -301,13 +263,11 @@
                     if((myRow*1) + myArr[i].length<=13)
                     {
                         newStart = start;
-                        // console.log("space in column : "+ myArr[i] + " : " + start + " : " + myRow);
                     }
                     else
                     {
                         var newRow = 13 - myArr[i].length;
                         newStart = $(".individual[data-row=" + newRow + "][data-column=" + myColumn + "]").index();
-                        // console.log("no space in column : "+ myArr[i] + " : " + start + " : " + myRow + " : " + newStart);
                     }
                 }
 
@@ -342,17 +302,14 @@
 
                 if(occupied=="empty"){
                     $.each(characters,function(key,item){
-                        // console.log(item);
                         $(".individual:eq(" + (newStart + nextPosition) + ")" ).html(item);
                         $(".individual:eq(" + (newStart + nextPosition) + ")" ).attr("data-word",myArr[i]);
-                        // $(".individual:eq(" + (newStart + nextPosition) + ")" ).css("background","pink");
                         nextPosition += nextLetter;
                     })
                 }
                 else{
                     tempWords.push(myArr[i]);
                 }
-                // console.log(tempWords);
             }
         }
 

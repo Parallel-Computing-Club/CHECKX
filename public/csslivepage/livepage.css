@@ -9,7 +9,6 @@
 
 body{
     background: url(../imglivepage/background.avif);
-    /* background: url(background.avif); */
 }
 
 .container{
@@ -18,7 +17,6 @@ body{
     left: 100px;
     right: 100px;
     bottom: 80px;
-    /* background: url(imglivepage/background.avif); */
     background-attachment: fixed;
     display: flex;
     justify-content: center;
