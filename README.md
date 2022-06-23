@@ -14,7 +14,7 @@
 1. _**Code Execution Engine**_ (Built seperately with _**Flask**_ running on Linux Machine), which took users inputs and ran the code with those Inputs.
 2. _**Word Searching Game**_ from a Grid of Letters (used _**Dictionary API**_).
 
-### • For _**Login to the Event**_, First _**Register**_ to [main.pcc.events](http://main.pcc.events/)
+### • For _**Login to the Event**_, First _**Register**_ to [**_main.pcc.events_**](http://main.pcc.events/)
 
 ### • _**Please do ⭐ the Repository, if You like it.**_
 
