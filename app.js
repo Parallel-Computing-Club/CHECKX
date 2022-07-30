@@ -186,10 +186,13 @@ app.get("/round1", async (req, res) => {
     today.setHours(today.getHours() + 5);
     today.setMinutes(today.getMinutes() + 30);
 
-    if (new Date("May 14, 2022 18:00:00") >= today && rollno != 205321004) {
+    // new Date("May 14, 2022 18:00:00") >= today && rollno != 205321004
+    if (new Date("Jul 14, 2022 18:00:00") >= today && rollno != 205321004) {
       res.render(`${__dirname}/Client/livepage1.ejs`);
     }
-    else if ((new Date("May 14 , 2022 19:30:00") <= today || name.round1done == 1)&& rollno != 205321004) {
+
+    // (new Date("May 14 , 2022 19:30:00") <= today || name.round1done == 1) && rollno != 205321004
+    else if ((new Date("Jul 14 , 2022 19:30:00") <= today || name.round1done == 1)&& rollno != 205321004) {
       res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
     } else {
 
@@ -304,7 +307,6 @@ app.post("/round1/submit", async (req, res) => {
     name.totalscore += (0.70 * name.score1);
     name.round1done = 1;
     name.save();
-    // console.log(name.score2);
 
     res.redirect("/logout");
   } catch (error) {
@@ -321,11 +323,13 @@ app.get("/round2", async (req, res) => {
     var today = new Date();
     today.setHours(today.getHours() + 5);
     today.setMinutes(today.getMinutes() + 30);
-
-    if (new Date("May 14, 2022 19:50:00") >= today && rollno != 205321004) {
+    
+    // new Date("May 14, 2022 19:50:00") >= today && rollno != 205321004
+    if (new Date("Jul 14, 2022 19:50:00") >= today && rollno != 205321004) {
       res.render(`${__dirname}/Client/livepage2.ejs`);
     }
-    else if ((new Date("May 14, 2022 20:00:00") <= today || name.round1done == 0 || name.round2done == 1)&& rollno != 205321004) {
+    // (new Date("May 14, 2022 20:00:00") <= today || name.round1done == 0 || name.round2done == 1)&& rollno != 205321004
+    else if ((new Date("Jul 14, 2022 20:00:00") <= today || name.round1done == 0 || name.round2done == 1)&& rollno != 205321004) {
       res.render(`${__dirname}/Client/indexfrontlogout.ejs`);
     } else {
       name.round2done = 1;

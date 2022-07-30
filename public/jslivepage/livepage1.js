@@ -1,5 +1,6 @@
 
-let countDownDate = new Date("May 14, 2022 18:00:00").getTime();
+// let countDownDate = new Date("May 14, 2022 18:00:00").getTime();
+let countDownDate = new Date("Jul 14, 2022 18:00:00").getTime();
 
 
 let counter = setInterval(() => {
