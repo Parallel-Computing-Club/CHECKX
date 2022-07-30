@@ -175,7 +175,7 @@
                     time_limit : "1",
                 },
                 success: function(data){
-                    if(data.status == "ok" || data.status == "code ok"){
+                    if(data.status == "Ok" || data.status == "Code Ok"){
                         $("#expop").val(data.output);
                     } else {
                         $("#expop").val(data.status);
@@ -197,7 +197,7 @@
                     time_limit : "1",
                 },
                 success: function(data){
-                    if(data.status == "ok" || data.status == "code ok"){
+                    if(data.status == "Ok" || data.status == "Code Ok"){
                         $("#yourop").val(data.output);
                     } else {
                         $("#yourop").val(data.status);
@@ -241,8 +241,6 @@
                             console.log("your score has not increased.");
                         }
                     });
-                    //-----------------------------
-
                 } else {
                     console.log("Keep Trying")
                 }
